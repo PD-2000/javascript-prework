@@ -1,12 +1,16 @@
-let computerMove = 'kamień';
-let playerMove = 'papier';
-printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
+let randomNumber = Math.floor(Math.random() * 3 + 1);
+console.log('Wylosowana liczba to: ' + randomNumber);
 
-let randomFraction = Math.random();
-printMessage('Wylosowany ułamek to: ' + randomFraction);
+let computerMove = 'nieznany ruch';
 
-let calculation = randomFraction * 3 + 1;
-printMessage('Ułamek pomnożony przez 3 i powiększony o 1: ' + calculation);
+if(randomNumber == 1){
+  computerMove = 'kamień';
+}
+else if (playerInput == '2'){
+    computerMove = 'papier';
+}
+else {
+    computerMove = 'nożyce';
+}
 
-let roundNumber = Math.floor(calculation);
-printMessage('Liczba po zaokrągleniu w dół to: ' + roundNumber);
+printMessage('Mój ruch to: ' + computerMove);
