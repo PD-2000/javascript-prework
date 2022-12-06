@@ -1,7 +1,9 @@
-function playGame(playerInput){
+{
+const playGame = function(playerInput){
+	// Plays a round of RPS
 	clearMessages();
 
-	function getMoveName(argMoveId){
+	const getMoveName = function(argMoveId){
 		// Checks CPU's/Player's choices
 		if(argMoveId == 1)
 			return 'kamień';
@@ -11,7 +13,7 @@ function playGame(playerInput){
 			return 'nożyce';
 	}
 
-	function displayResult(argComputerMove, argPlayerMove){
+	const displayResult = function(argComputerMove, argPlayerMove){
 		// Decides the winner
 		if(argComputerMove == argPlayerMove)
 			printMessage('Remis');
@@ -24,16 +26,14 @@ function playGame(playerInput){
 	}
 
 	// CPU's move
-	let randomNumber = Math.floor(Math.random() * 3 + 1);
-	console.log('Wylosowana liczba to: ' + randomNumber);
-
-	let computerMove = getMoveName(randomNumber);
+	const randomNumber = Math.floor(Math.random() * 3 + 1);
+	//console.log('Wylosowana liczba to: ' + randomNumber);
+	
+	const computerMove = getMoveName(randomNumber);
 	printMessage('Mój ruch to: ' + computerMove);
 
 	// Player's move
-	console.log('Gracz wpisał: ' + playerInput);
-	playerMove = getMoveName(playerInput);
-
+	const playerMove = getMoveName(playerInput);
 	printMessage('Twój ruch to: ' + playerMove);
 
 	// Result
@@ -44,13 +44,4 @@ function playGame(playerInput){
 document.getElementById('play-rock').addEventListener('click', function(){playGame(1)});
 document.getElementById('play-paper').addEventListener('click', function(){playGame(2)});
 document.getElementById('play-scissors').addEventListener('click', function(){playGame(3)});
-
-/*
-let playRock = document.getElementById('play-rock');
-let playPaper = document.getElementById('play-paper');
-let playScissors = document.getElementById('play-scissors');
-
-playRock.addEventListener('click', function(){playGame(1)});
-playPaper.addEventListener('click', function(){playGame(2)});
-playScissors.addEventListener('click', function(){playGame(3)});
-*/
+}
