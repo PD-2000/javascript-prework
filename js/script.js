@@ -41,10 +41,16 @@ function playGame(playerInput){
 }
 
 // Event listeners
+document.getElementById('play-rock').addEventListener('click', function(){playGame(1)});
+document.getElementById('play-paper').addEventListener('click', function(){playGame(2)});
+document.getElementById('play-scissors').addEventListener('click', function(){playGame(3)});
+
+/*
 let playRock = document.getElementById('play-rock');
 let playPaper = document.getElementById('play-paper');
 let playScissors = document.getElementById('play-scissors');
 
-playRock.addEventListener('click', playGame(1));
-playPaper.addEventListener('click', playGame(2));
-playScissors.addEventListener('click', playGame(3));
+playRock.addEventListener('click', function(){playGame(1)});
+playPaper.addEventListener('click', function(){playGame(2)});
+playScissors.addEventListener('click', function(){playGame(3)});
+*/
